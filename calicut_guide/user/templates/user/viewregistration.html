@@ -1,0 +1,46 @@
+{% extends 'temp/main_admin.html' %}
+{% block base %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>view</title>
+</head>
+<body>
+	<center>
+    <h2 style="color: black">VIEW REGISTRATION</h2>
+	<table border="1" CLASS="table table-bordered">
+	<tr style="color: black">
+		<td>NAME</td>
+		<td>AGE</td>
+		<td>GENDER</td>
+		<td>ADDRESS</td>
+		<td>PHONENUMBER</td>
+		<td>ID PROOF</td>
+        <td>E-MAIL</td>
+        <td>STATUS</td>
+	</tr>
+
+        {% for i in e %}
+            <tr style="color: black">
+		<td>{{ i.user_name }}</td>
+		<td>{{ i.age }}</td>
+		<td>{{ i.gender }}</td>
+		<td>{{ i.address }}</td>
+		<td>{{ i.phone_number}}</td>
+                <td><a href="/static/{{ i.id_proof }}" ><img src="/static/{{ i.id_proof}}" height="50"></a></td>
+{#                <td><img src="/static/{{ i.id_proof}}" height="50"></td>#}
+
+        <td>{{ i.e_mail }}</td>
+            <td>{{ i.status }}</td>
+           <td><a href="/user/accepted/{{ i.user_id }}"class="btn btn-primary">Accept</a></td>
+            <td><a href="/user/rejected/{{ i.user_id}}"class="btn btn-primary">Reject</a></td>
+
+            </tr>
+
+        {% endfor %}
+   </table>
+</center>
+</body>
+</html>
+{% endblock %}

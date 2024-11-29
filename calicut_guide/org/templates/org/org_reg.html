@@ -1,0 +1,70 @@
+{% extends 'temp/main_home.html' %}
+{% block base %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>REGISTER</title>
+</head>
+<body>
+	<center>
+	<h1>REGISTERATION</h1>
+	<form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+		<table>
+			<tr>
+				<td>ORGANISATION NAME</td>
+					<td><input type="text" name="name" required="" class="form-control"></td>
+			</tr>
+			<tr>
+					<td>AVAILABLE FACILITY</td>
+					<td><input type="text" name="age" required="" class="form-control"></td>
+				</tr>
+{#				<tr>#}
+{#					<td>GENDER  </td>#}
+{#					<td>male<input type="radio" name="gender" value="male">#}
+{#					female<input type="radio" name="gender" value="female">#}
+{#					other<input type="radio" name="gender" value="other" checked=""></td>#}
+{#				</tr>#}
+				<tr>
+				<td>ADDRESS</td>
+
+					<td><textarea name="address" required="" class="form-control"></textarea> </td>
+			</tr>
+			<tr>
+				<td>PHONE</td>
+					<td><input type="text" name="mobilenumber" required pattern="{0-9}{10}"minlength="10" maxlength="10" class="form-control"></td>
+			</tr>
+			<tr>
+				<td>LICENCE PROOF</td>
+					<td><input type="file" name="img" required="" class="form-control"></td>
+			</tr>
+            <tr>
+				<td>E-MAIL</td>
+					<td><input type="text" name="e-mail" required="" class="form-control"></td>
+			</tr>
+			<tr>
+				<td>PASSWORD</td>
+					<td><input type="password" name="password" required="" class="form-control"></td>
+			</tr>
+						<tr>
+				<td>CONFIRM PASSWORD</td>
+					<td><input type="password" name="password" required="" class="form-control"></td>
+			</tr>
+			<tr>
+					<td></td>
+					<td><input type="submit" value="REGISTER"></td>
+				</tr>	
+
+		</table>
+	</form>
+        {% if msg %}
+            <script>
+            alert('Registered Successfully')
+            </script>
+        {% endif %}
+        <br><br><br>
+</center>
+</body>
+</html>
+{% endblock %}

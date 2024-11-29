@@ -1,0 +1,40 @@
+{% extends 'temp/main_admin.html' %}
+{% block base %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>VIEW</title>
+</head>
+<body>
+	<center>
+    <h2 style="color:black">VIEW SEARCHES</h2>
+			<table border="1" class="table table-bordered">
+	<tr style="color: black">
+		<td>FACILITY</td>
+		<td>REQUEST</td>
+		<td>LOCATION</td>
+		<td>DATE</td>
+		<td>TIME</td>
+         <td>STATUS</td>
+	</tr>
+
+        {% for i in e %}
+            <tr style="color: black">
+		<td>{{ i.facility_id }}</td>
+		<td>{{ i.request }}</td>
+		<td>{{ i.location }}</td>
+		<td>{{ i.date }}</td>
+		<td>{{ i.time}}</td>
+            <td>{{ i.status}}</td>
+		<td><a href="/request/accp/{{ i.request_id }}" class="btn btn-primary">ACCEPT</a></td>
+            </tr>
+                {% endfor %}
+   </table>
+
+
+	</center>
+
+</body>
+</html>
+{% endblock %}

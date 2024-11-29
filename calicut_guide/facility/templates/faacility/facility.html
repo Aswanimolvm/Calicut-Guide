@@ -1,0 +1,49 @@
+{% extends 'temp/main_org.html' %}
+{% block base %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<center>
+	<h1>FACILITY</h1>
+	<form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+		<table>
+			<tr>
+				<td>FACILITY</td>
+
+					<td><input type="text" name="facility" required="" class="form-control"></td>
+			</tr>
+			<tr>
+					<td>LOCATION</td>
+					<td><input type="text" name="location" required="" class="form-control"></td>
+				</tr>
+{#				<tr>#}
+{#				<td>ORGANISATION</td>#}
+{#					<td><input type="text" name="user" required="'" class="form-control"></td>#}
+{#			</tr>#}
+			<tr>
+					<td>IMAGE</td>
+					<td><input type="file" name="image" required="" class="form-control"></td>
+				</tr>
+				<tr>
+					<td>PHONE NUMBER</td>
+					<td><input type="text" name="number" required pattern="{0-9}{10}" minlength="10" maxlength="10" " class="form-control"></td>
+				</tr>
+{#				<tr>#}
+{#					<td>DETAILS</td>#}
+{#					<td><input type="text" name="e-mail" required="" class="form-control"></td>#}
+{#				</tr>#}
+				<tr>
+					<td></td>
+					<td><input type="submit" value="ADD"></td>
+				</tr>	
+
+        </table>
+    </form>
+    </center>
+</body>
+</html>
+{% endblock %}

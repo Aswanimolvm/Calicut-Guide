@@ -1,0 +1,39 @@
+{% extends 'temp/main_admin.html' %}
+{% block base %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>VIEW</title>
+</head>
+<body>
+	<center>
+    <h2 style="color: black">VIEW NEWS</h2>
+		<table border="1" class="table table-bordered">
+	<tr style="color: black">
+
+		<td>NEWS TITLE</td>
+		<td>NEWS</td>
+		<td>IMAGE</td>
+		<td>LOCATION</td>
+		<td>DATE</td>
+	</tr>
+
+            {% for i in d %}
+         <tr style="color: black">
+		<td>{{ i.news_title}}</td>
+		<td>{{ i.news }}</td>
+		<td><img src="/static/{{ i.image }}" height="50"></td>
+		<td>{{ i.location }}</td>
+		<td>{{ i.date }}</td>
+         <td><a href="/news/delete/{{ i.news_id }}"class="btn btn-primary">Delete</a></td>
+	</tr>
+            {%  endfor %}
+</table>
+	</center>
+
+</body>
+</html>
+{% endblock %}
+
+

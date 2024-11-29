@@ -1,0 +1,60 @@
+{% extends 'temp/main_org.html' %}
+{% block base %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<center>
+	<h1>DETAILS</h1>
+	<form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+		<table>
+            <tr>
+				<td>FACILITY</td>
+                <td><input type="text" value="{{ a.facility_type }}" required="" class="form-control"></td>
+			</tr>
+			<tr>
+				<td>ADDRESS</td>
+
+					<td><textarea name="address" required="" class="form-control"></textarea> </td>
+			</tr>
+			<tr>
+					<td>LOCATION</td>
+					<td><input type="text" name="location" required="" class="form-control"></td>
+				</tr>
+				<tr>
+				<td>WEBSITE</td>
+					<td><input type="text" name="website" required="'" class="form-control"></td>
+			</tr>
+			<tr>
+					<td>IMAGE</td>
+					<td><input type="file" name="image" required="" class="form-control"></td>
+				</tr>
+				<tr>
+					<td>PHONE NUMBER</td>
+					<td><input type="text" name="number" required pattern="{0-9}{10}" minlength="10" maxlength="10" " class="form-control"></td>
+				</tr>
+				<tr>
+					<td>DETAILS</td>
+
+					<td><textarea name="details" required="" class="form-control"></textarea> </td>
+				</tr>
+{#            <tr>#}
+{#					<td>CHAT</td>#}
+{#					<td><input type="text" name="chat" required="" class="form-control"></td>#}
+{#				</tr>#}
+				<tr>
+					<td></td>
+					<td><input type="submit" value="ADD"></td>
+				</tr>
+
+        </table>
+    </form>
+    </center>
+
+</body>
+</html>
+{% endblock %}

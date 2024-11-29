@@ -1,0 +1,42 @@
+{% extends 'temp/main_user.html' %}
+{% block base %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>COMPLAINT</title>
+</head>
+<body>
+	<center>
+		<h1 style="color: #081c30">COMPLAINT</h1>
+	<form method="post">
+        {% csrf_token %}
+			<table>
+{#            <tr style="color: black">#}
+{#                <td>FACILITY</td>#}
+{#                <td><select name="facility" required="" class="form-control">#}
+{#                    <option>------------select-------------</option>#}
+{#                {% for i in a %}#}
+{#                <option value="{{ i.facility_id }}">{{ i.facility_type}}</option>#}
+{#                {% endfor %}#}
+{#            </select></td>#}
+{#			</tr>#}
+                <tr style="color: black">
+				<td>USERNAME</td>
+					<td><input type="text" name="un" required="" class="form-control"></td>
+			</tr>
+
+			<tr style="color: black">
+				<td>COMPLAINT</td>
+					<td><input type="text" name="complaint" required="" class="form-control"></td>
+			</tr>
+
+			<tr>
+					<td></td>
+					<td><input type="submit" value="SUBMIT"></td>
+				</tr>
+				</table>	
+</center>
+
+</body>
+</html>
+{% endblock %}

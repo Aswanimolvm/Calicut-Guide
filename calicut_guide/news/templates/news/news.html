@@ -1,0 +1,48 @@
+{% extends 'temp/main_admin.html' %}
+{% block base %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>NEWS</title>
+</head>
+<body>
+	<center>
+			<h1>NEWS</h1>
+	<form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+		<table>
+			<tr>
+				<td>NEWS TITLE</td>
+					<td><input type="text" name="title" required="" class="form-control"></td>
+			</tr>
+			<tr>
+				<td>NEWS</td>
+					<td><input type="text" name="news" required="" class="form-control"></td>
+			</tr>
+			<tr>
+				<td>IMAGE</td>
+					<td><input type="file" name="image" class="form-control"></td>
+			</tr>
+			<tr>
+				<td>LOCATION</td>
+					<td><input type="text" name="location" required="" class="form-control"></td>
+			</tr>
+			<tr>
+				<td>date</td>
+					<td><input type="date" name="date" required="" class="form-control"></td>
+			</tr>
+			<tr>
+					<td></td>
+					<td><input type="submit" value="ADD"></td>
+				</tr>	
+
+</table>
+			
+			
+
+	</center>
+
+</body>
+</html>
+{% endblock %}

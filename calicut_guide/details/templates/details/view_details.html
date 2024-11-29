@@ -1,0 +1,50 @@
+{% extends 'temp/main_user.html' %}
+{% block base %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>VIEW</title>
+</head>
+<body>
+<center>
+    <h2 style="color: black">VIEW DETAILS</h2>
+	<table border="2" class="table table-bordered">
+	<tr>
+		<td>FACILITY TYPE</td>
+        <td>ADDRESS</td>
+		<td>LOCATION</td>
+		<td>WEBSITE</td>
+		<td>IMAGE</td>
+		<td>PHONE NUMBER</td>
+        <td>DETAILS</td>
+{#		<td>STATUS</td>#}
+{#        <td>CHAT</td>#}
+
+
+	</tr>
+	<tr>
+        {% for i in b %}
+            <tr style="color: black">
+                <td>{{ i.facility.facility_type }}</td>
+                <td>{{ i.address}}</td>
+                <td>{{ i.location }}</td>
+                <td>{{ i.website_link}}</td>
+                <td><img src="/static/{{ i.image }}" height="50"></td>
+                <td>{{ i.phone_number }}</td>
+                <td>{{ i.details }}</td>
+{#                <td>{{ i.status}}</td>#}
+{#                <td>{{ i.chat }}</td>#}
+
+{#		<td><a href="/facility/accept/{{ i.facility_id }}"class="btn btn-primary">working</a></td>#}
+{#            <td><a href="/facility/reject/{{ i.facility_id }}"class="btn btn-primary">closed</a></td>#}
+
+		</tr>
+        {% endfor %}
+   </table>
+</center>
+
+
+</body>
+</html>
+{% endblock %}

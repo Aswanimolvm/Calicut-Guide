@@ -1,0 +1,49 @@
+{% extends 'temp/main_org.html' %}
+{% block base %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>VIEW</title>
+</head>
+<body>
+<center>
+    <h2 style="color: black">VIEW DETAILS</h2>
+	<table border="2" class="table table-bordered">
+	<tr>
+		<td>FACILITY TYPE</td>
+        <td>ADDRESS</td>
+		<td>LOCATION</td>
+		<td>WEBSITE</td>
+		<td>IMAGE</td>
+		<td>PHONENUMBER</td>
+        <td>DETAILS</td>
+		<td>STATUS</td>
+{#        <td>CHAT</td>#}
+
+
+	</tr>
+        <tr>
+        {% for i in a %}
+            <tr style="color: black">
+	    <td>{{ i.facility_id }}</td>
+		<td>{{ i.address }}</td>
+                <td>{{ i.location }}</td>
+		<td>{{ i.website_link }}</td>
+		<td><img src="/static/{{ i.image }}" height="50"></td>
+		<td>{{ i.phone_number }}</td>
+		<td>{{ i.details }}</td>
+                <td>{{ i.status}}</td>
+{#                <td>{{ i.chat }}</td>#}
+
+
+
+		</tr>
+        {% endfor %}
+   </table>
+</center>
+
+
+</body>
+</html>
+{% endblock %}

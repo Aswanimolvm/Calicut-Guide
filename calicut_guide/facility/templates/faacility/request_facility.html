@@ -1,0 +1,51 @@
+{% extends 'temp/main_user.html' %}
+{% block base %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>VIEW</title>
+</head>
+<body>
+	<center>
+    <form method="post">
+        {% csrf_token %}
+        <td><input type="text" name="search" placeholder="Enter facility type"></td>
+        <td><input type="text" name="loc" placeholder="Enter facility location"></td>
+        <td><input type="submit" value="Search"></td>
+
+    </form>
+	<table border="1" class="table table-bordered">
+	<tr>
+		<td>FACILITY TYPE</td>
+		<td>LOCATION</td>
+{#		<td>FACILITY</td>#}
+		<td>IMAGE</td>
+		<td>PHONENUMBER</td>
+{#		<td>LINK</td>#}
+        <td>STATUS</td>
+
+
+	</tr>
+	<tr>
+        {% for i in a %}
+		<td>{{ i.facility_type }}</td>
+		<td>{{ i.location }}</td>
+{#		<td>{{ i.facility }}</td>#}
+		<td><img src="/static/{{ i.image }}" height="50"></td>
+		<td>{{ i.phone_number }}</td>
+{#		<td class="btn btn-close-white"><a href="{{ i.link }}">{{ i.link }}</a> </td>#}
+            <td>{{ i.status}}</td>
+
+		<td><a href="/details/view_details/" style="color: #081c30">Details</a></td>
+
+
+		</tr>
+        {% endfor %}
+   </table>
+</center>
+
+
+</body>
+</html>
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends 'temp/main_user.html' %}
+{% block base %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>VIEW</title>
+</head>
+<body>
+	<center>
+    <h2 style="color: black">VIEW FACILITY</h2>
+	<table border="2" class="table table-bordered">
+	<tr>
+		<td>FACILITY TYPE</td>
+		<td>LOCATION</td>
+		<td>IMAGE</td>
+		<td>PHONENUMBER</td>
+		<td>DETAILS</td>
+        <td>STATUS</td>
+	</tr>
+        {% for i in a %}
+    <tr>
+		<td>{{ i.facility_type }}</td>
+		<td>{{ i.location }}</td>
+		<td><img src="/static/{{ i.image }}" height="50"></td>
+		<td>{{ i.phone_number }}</td>
+		<td><a href="/details/view_details/" class="btn btn-primary">details</a></td>
+    <td>{{ i.status }}</td>
+    </tr>
+        {% endfor %}
+   </table>
+</center>
+</body>
+</html>
+{% endblock %}

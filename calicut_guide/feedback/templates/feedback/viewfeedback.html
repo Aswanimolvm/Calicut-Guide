@@ -1,0 +1,39 @@
+{% extends 'temp/main_admin.html' %}
+{% block base %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>VIEW</title>
+</head>
+<body>
+		<center>
+        <h2 style="color: black">VIEW FEEDBACK</h2>
+<table border="1" class="table table-bordered">
+	<tr style="color: black">
+
+		<td>Username</td>
+        <td>feedback</td>
+        <td>Date</td>
+        <td>time</td>
+
+	</tr>
+
+	<tr>
+        {% for i in b %}
+            <tr style="color: black">
+		<td>{{ i.username }}</td>
+		<td>{{ i.feedback }}</td>
+		<td>{{ i.date }}</td>
+            <td>{{ i.time }}</td>
+
+
+	</tr>
+    {% endfor %}
+</table>
+</center>
+
+
+</body>
+</html>
+{% endblock %}
